@@ -283,8 +283,9 @@ function renderWhoamiLines() {
     "セキュリティが好きです。",
     "変なものばっかり作っています。",
     `GUI版はこちらへ -> ${linkify("inazu.me", "https://inazu.me")}`,
-    "ダークウェブアドレス -> inazumimagwzqyacpudr6fod2ekjlxqog3o57xyqakpldxxfow3jgkad[.]onion",
-    `${colors.muted}（たまに起動してます。このドメインを掘るのに4日かかりました。）${colors.reset}`,
+    `連絡先 -> ${linkify("makoto@inazu.me", "mailto:makoto@inazu.me")}`,
+    `ダークウェブアドレス -> ${colors.brightGreen}${colors.bold}inazumima${colors.reset}gwzqyacpudr6fod2ekjlxqog3o57xyqakpldxxfow3jgkad[.]onion`,
+    `${colors.muted}（稼働は月1ぐらい、見れたらラッキーです。先頭の9文字＝約35兆分の1を引き当てるために、CPUを4日間回し続けました。）${colors.reset}`,
   ];
 }
 
