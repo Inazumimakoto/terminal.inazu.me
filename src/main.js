@@ -1128,11 +1128,9 @@ async function renderBootFlow() {
   setIdentity(promptHost);
 
   showShellHeader();
-  await delay(420);
-  await animateTrain();
+  void animateTrain();
   await delay(240);
   printLines(renderHelpLines());
-  await delay(520);
   writeln();
 
   history = [];
