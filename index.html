@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>inazumi</title>
+    <meta
+      name="description"
+      content="inazumiのターミナル風ホームページ。"
+    />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' fill='%23050705'/%3E%3Ctext x='3' y='11' fill='%2380d869' font-size='10' font-family='monospace'%3E$%3C/text%3E%3C/svg%3E"
+    />
+  </head>
+  <body>
+    <main class="terminal-shell" aria-label="inazumi terminal homepage">
+      <div class="crt-overlay" aria-hidden="true"></div>
+
+      <section class="terminal-frame" aria-label="interactive terminal">
+        <div id="logoHeader" class="logo-header" aria-label="MAKOTO logo" aria-hidden="true">
+          <div id="logoScale" class="logo-scale">
+            <div id="logoArt" class="logo-art"></div>
+          </div>
+          <div class="logo-divider" aria-hidden="true"></div>
+        </div>
+        <div id="terminal" class="terminal-host"></div>
+      </section>
+    </main>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
