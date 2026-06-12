@@ -60,6 +60,11 @@ const term = new Terminal({
   fontSize: window.innerWidth <= 520 ? 13 : 15,
   letterSpacing: 0,
   lineHeight: 1.2,
+  linkHandler: {
+    activate(event, uri) {
+      window.open(uri, "_blank", "noopener,noreferrer");
+    },
+  },
   scrollback: 1600,
   theme: {
     background: "#000000",
@@ -279,6 +284,7 @@ function renderWhoamiLines() {
     "変なものばっかり作っています。",
     `GUI版はこちらへ -> ${linkify("inazu.me", "https://inazu.me")}`,
     "ダークウェブアドレス -> inazumimagwzqyacpudr6fod2ekjlxqog3o57xyqakpldxxfow3jgkad[.]onion",
+    `${colors.muted}（たまに起動してます。このドメインを掘るのに4日かかりました。）${colors.reset}`,
   ];
 }
 
@@ -308,6 +314,13 @@ function renderSshLines(commandText) {
 }
 
 function renderPsLines() {
+  const postscripts = [
+    "追伸：季節の変わり目なので、お体にお気をつけください。",
+    "追伸：最近よく眠れていますか。私は寝不足です。",
+    "追伸：水分補給を忘れずに。",
+    "追伸：また遊びに来てください。exit は何回打ってもダメですが。",
+  ];
+
   return [
     `${colors.yellow}  PID USER     STAT TIME COMMAND${colors.reset}`,
     "    1 root     Ss   0:01 init",
@@ -318,6 +331,8 @@ function renderPsLines() {
     "  423 inazumi  S+   0:00 makoto-aa-cache",
     `  424 inazumi  S+   0:00 ${colors.green}makotrain --home${colors.reset}`,
     `${colors.muted}7 processes, 1 terminal, 0 excuses.${colors.reset}`,
+    "",
+    `${colors.muted}${randomItem(postscripts)}  いなずみ${colors.reset}`,
   ];
 }
 
