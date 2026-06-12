@@ -7,7 +7,6 @@ inazumi のターミナル風ホームページです。
 このサイトは Cloudflare Pages で公開しています。
 
 - Site: https://terminal.inazu.me
-- Repository: https://github.com/Inazumimakoto/terminal.inazu.me
 
 ## 開発
 
