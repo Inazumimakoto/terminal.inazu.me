@@ -250,7 +250,7 @@ function renderHelpLines() {
     ["touch", "呼吸を止めて1秒を出力します"],
     ["sudo", "須藤さんを呼び出します"],
     ["ssh", "ひそひそ返事をします"],
-    ["ps", "ps(追伸)を表示します"],
+    ["ps", "プロセス一覧を表示します"],
     ["ping", "pong を返します"],
     ["exit", "終了を拒否します"],
     ["ls", "MAKOTO列車を走らせます"],
@@ -309,11 +309,15 @@ function renderSshLines(commandText) {
 
 function renderPsLines() {
   return [
-    `${colors.yellow}   PID    TTY      時間   CMD${colors.reset}`,
-    "     1    ?        00:00:01 init",
-    "  1337  pts/0    00:00:04 zsh",
-    "  1338  pts/0    00:00:03 inazumi",
-    `${colors.muted}追伸: 今このセッションが、ちゃんとここに残っています。${colors.reset}`,
+    `${colors.yellow}  PID USER     STAT TIME COMMAND${colors.reset}`,
+    "    1 root     Ss   0:01 init",
+    "   89 root     S    0:00 journald",
+    "  216 systemd  Ssl  0:00 resolved",
+    "  421 inazumi  S+   0:04 zsh -l",
+    "  422 inazumi  Sl+  0:06 xterm-renderer",
+    "  423 inazumi  S+   0:00 makoto-aa-cache",
+    `  424 inazumi  S+   0:00 ${colors.green}makotrain --home${colors.reset}`,
+    `${colors.muted}7 processes, 1 terminal, 0 excuses.${colors.reset}`,
   ];
 }
 
@@ -1124,7 +1128,8 @@ async function renderBootFlow() {
   setIdentity(promptHost);
 
   showShellHeader();
-  await delay(820);
+  await delay(420);
+  await animateTrain();
   await delay(240);
   printLines(renderHelpLines());
   await delay(520);
